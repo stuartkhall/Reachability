@@ -474,7 +474,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     {
         if(self.reachableBlock)
         {
-#ifdef DEBUG
+#ifdef REACHABILITY_DEBUG
             NSLog(@"Reachability: blocks are not called on the main thread.\n Use dispatch_async(dispatch_get_main_queue(), ^{}); to update your UI!");
 #endif
             self.reachableBlock(self);
@@ -484,7 +484,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     {
         if(self.unreachableBlock)
         {
-#ifdef DEBUG
+#ifdef REACHABILITY_DEBUG
             NSLog(@"Reachability: blocks are not called on the main thread.\n Use dispatch_async(dispatch_get_main_queue(), ^{}); to update your UI!");
 #endif
             self.unreachableBlock(self);
